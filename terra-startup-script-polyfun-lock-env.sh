@@ -22,13 +22,13 @@ conda install -c conda-forge mamba -y
 
 # Clone the PolyFun repository
 if [ ! -d "/opt/polyfun" ]; then
-    sudo git clone https://github.com/omerwe/polyfun.git /opt/polyfun
+    sudo git clone https://github.com/omerwe/polyfun.git $HOME/polyfun
 fi
 
 # Set the working directory
-cd /opt/polyfun
+cd $HOME/polyfun
 
-mv /opt/polyfun/polyfun.yml.lock /opt/polyfun/polyfun-lock.txt
+mv polyfun.yml.lock polyfun-lock.txt
 
 # Create the Conda environment using the renamed file
 mamba create --name polyfun-lock-env --file polyfun-lock.txt
